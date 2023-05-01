@@ -1,9 +1,11 @@
 name: Spellchecking
 on: 
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
-  - push
 
 jobs:
   spellchecking:
