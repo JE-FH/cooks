@@ -1,22 +1,12 @@
-name: Spellchecking
-on: 
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+name: Spellcheck Action
+on: push
 
 jobs:
-  spellchecking:
-    name: Spellcheck action
+  build:
+    name: Spellcheck
     runs-on: ubuntu-latest
     steps:
     # The checkout step
     - uses: actions/checkout@v3
-    - uses: rojopolis/spellcheck-github-actions@0.30.0
+    - uses: rojopolis/spellcheck-github-actions@v0
       name: Spellcheck
-      with: 
-        dictionary:
-          wordlists:
-            - .github/workflows/.wordlist.txt
